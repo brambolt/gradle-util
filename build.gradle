@@ -1,0 +1,30 @@
+
+plugins {
+  id 'com.brambolt.gradle.build.library' apply false
+}
+
+description = 'Gradle utilities.'
+group = 'com.brambolt.gradle'
+
+ext {
+  artifactId = 'brambolt-gradle-util'
+  developers = [[
+    email: 'stefan.sigurdsson@brambolt.com',
+    id: 'stefan.sigurdsson@brambolt.com',
+    name: 'Stefán Sigurðsson'
+  ]]
+  inceptionYear = '2017'
+  isGitHosted = true
+  isOpenSource = true // Disables publishing to plugins.gradle.org and Bintray
+  licenses = [[]]
+  release = bramboltRelease
+  vcsUrl = 'https://gitlab.brambolt.com/brambolt/libraries/gradle-util'
+}
+
+apply plugin: 'com.brambolt.gradle.build.library'
+
+dependencies {
+  implementation "com.brambolt:brambolt-rt:${version}"
+  implementation "com.brambolt.gradle:brambolt-gradle-rt:${version}"
+  testImplementation "com.brambolt.gradle:brambolt-gradle-testkit:${version}"
+}
